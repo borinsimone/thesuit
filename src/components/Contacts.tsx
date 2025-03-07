@@ -21,10 +21,10 @@ function Contacts() {
     if (formRef.current) {
       emailjs
         .sendForm(
-          'service_yg4ahfp', // <-- Sostituisci con il tuo Service ID
-          'template_a8cd2oi', // <-- Sostituisci con il tuo Template ID
+          'service_g083kdi', // <-- Sostituisci con il tuo Service ID
+          'template_483xml9', // <-- Sostituisci con il tuo Template ID
           formRef.current,
-          'ypOt0yXTBqNx--E7A' // <-- Sostituisci con il tuo Public Key
+          'MJBbNYTcMzViUjQqn' // <-- Sostituisci con il tuo Public Key
         )
         .then(
           () => {
