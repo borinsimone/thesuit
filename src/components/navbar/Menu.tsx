@@ -44,7 +44,7 @@ function Menu({ isAtTop }: MenuProps) {
 
   return (
     <Container
-      logoVisible={isAtTop}
+      logovisible={isAtTop}
       isopen={isOpen}
     >
       <a
@@ -149,7 +149,7 @@ function Menu({ isAtTop }: MenuProps) {
 }
 
 export default Menu;
-const Container = styled.div<{ logoVisible: boolean; isopen: boolean }>`
+const Container = styled.div<{ logovisible: boolean; isopen: boolean }>`
   position: fixed;
   top: 0;
   left: 0;
@@ -211,7 +211,7 @@ const Container = styled.div<{ logoVisible: boolean; isopen: boolean }>`
     }
   }
   ${(props) =>
-    props.logoVisible &&
+    props.logovisible &&
     css`
       .logoMobile {
         left: 50%;

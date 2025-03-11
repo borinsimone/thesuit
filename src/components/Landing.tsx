@@ -103,7 +103,7 @@ export default Landing;
 interface StyledProps {
   top?: boolean;
   isopen?: boolean;
-  logoVisible?: boolean;
+  logovisible?: boolean;
 }
 const Container = styled.div<StyledProps>`
   height: 100vh;

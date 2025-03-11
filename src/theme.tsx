@@ -43,11 +43,9 @@ export const FromLeft = ({
   duration = 0.3,
   delay = 0.2,
   className,
-  as: Component = 'div',
 }: AnimationProps) => {
-  const MotionComponent = motion(Component);
   return (
-    <MotionComponent
+    <motion.div
       className={className}
       initial='hidden'
       whileInView='visible'
@@ -58,7 +56,7 @@ export const FromLeft = ({
       }}
     >
       {children}
-    </MotionComponent>
+    </motion.div>
   );
 };
 export const FromBot = ({
