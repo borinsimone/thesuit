@@ -1,13 +1,16 @@
-import React, { useEffect, useState } from 'react';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { useEffect, useState } from 'react';
+import { FaBars } from 'react-icons/fa';
 import styled, { css } from 'styled-components';
 import { motion } from 'framer-motion';
 import { CgClose } from 'react-icons/cg';
-import { IoCallOutline, IoMailOutline } from 'react-icons/io5';
+import { IoCallOutline } from 'react-icons/io5';
 import { breakpoints, FadeIn, FromLeft } from '../../theme';
 import logo from '../../assets/logo.png';
-
-function Menu({ isAtTop, setIsAtTop }) {
+interface MenuProps {
+  isAtTop: boolean;
+  setIsAtTop: React.Dispatch<React.SetStateAction<boolean>>;
+}
+function Menu({ isAtTop }: MenuProps) {
   const [isOpen, setIsOpen] = useState(false);
   let links = [
     {
@@ -79,7 +82,7 @@ function Menu({ isAtTop, setIsAtTop }) {
           ease: 'easeInOut',
         }}
       >
-        {links.map((link, index) => (
+        {links.map((link) => (
           <a
             onClick={() => setIsOpen(false)}
             href={link.link}
@@ -99,7 +102,7 @@ function Menu({ isAtTop, setIsAtTop }) {
       </motion.div>
       <nav>
         <FadeIn
-          transition={{ duration: 0.5 }}
+          // transition={{ duration: 0.5 }}
           className='logo'
         >
           <div className='logoImg'>
@@ -146,7 +149,7 @@ function Menu({ isAtTop, setIsAtTop }) {
 }
 
 export default Menu;
-const Container = styled.div`
+const Container = styled.div<{ logoVisible: boolean; isopen: boolean }>`
   position: fixed;
   top: 0;
   left: 0;

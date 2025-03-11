@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import React, { useRef, useState } from 'react';
-import { IoCallOutline, IoMailOutline } from 'react-icons/io5';
+import { IoMailOutline } from 'react-icons/io5';
 import styled from 'styled-components';
 import { breakpoints } from '../theme';
 import emailjs from '@emailjs/browser';

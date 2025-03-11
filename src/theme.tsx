@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ReactNode } from 'react';
+import { ElementType, ReactNode } from 'react';
 
 export const breakpoints = {
   mobile: '480px',
@@ -13,6 +13,7 @@ interface AnimationProps {
   duration?: number;
   delay?: number;
   className?: string;
+  as?: ElementType;
 }
 
 export const FadeIn = ({
@@ -44,9 +45,9 @@ export const FromLeft = ({
   className,
   as: Component = 'div',
 }: AnimationProps) => {
+  const MotionComponent = motion(Component);
   return (
-    <motion.div
-      as={Component}
+    <MotionComponent
       className={className}
       initial='hidden'
       whileInView='visible'
@@ -57,7 +58,7 @@ export const FromLeft = ({
       }}
     >
       {children}
-    </motion.div>
+    </MotionComponent>
   );
 };
 export const FromBot = ({

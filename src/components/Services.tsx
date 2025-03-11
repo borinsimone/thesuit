@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import card from '../assets/card.png';
 import pc from '../assets/pc.png';

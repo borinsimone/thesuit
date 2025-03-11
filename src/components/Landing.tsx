@@ -1,11 +1,15 @@
 import { motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import styled, { css } from 'styled-components';
-import { breakpoints, FadeIn } from '../theme';
-
-function Landing({ isAtTop, setIsAtTop }) {
+import { breakpoints } from '../theme';
+interface LandingProps {
+  scrollY: number;
+  isAtTop: boolean;
+  setIsAtTop: React.Dispatch<React.SetStateAction<boolean>>;
+}
+function Landing({ isAtTop, setIsAtTop }: LandingProps) {
   const [scrollPosition, setScrollPosition] = useState(0);
-  const containerRef = useRef<HTMLElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const handleScroll = () => {
       if (containerRef.current) {
@@ -22,7 +26,7 @@ function Landing({ isAtTop, setIsAtTop }) {
     if (containerRef.current) {
       initialScrollPos = containerRef.current.getBoundingClientRect().bottom;
     }
-    setScrollPosition(initialScrollPos);
+    setScrollPosition(initialScrollPos ?? 0);
   }, []);
   useEffect(() => {
     if (scrollPosition < 600) {
@@ -96,8 +100,12 @@ function Landing({ isAtTop, setIsAtTop }) {
 }
 
 export default Landing;
-
-const Container = styled.div`
+interface StyledProps {
+  top?: boolean;
+  isopen?: boolean;
+  logoVisible?: boolean;
+}
+const Container = styled.div<StyledProps>`
   height: 100vh;
   height: 100dvh;
   width: 100%;

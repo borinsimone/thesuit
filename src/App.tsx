@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import './App.css';
 import styled from 'styled-components';
@@ -10,7 +10,7 @@ import Services from './components/Services';
 import Contacts from './components/Contacts';
 import Footer from './components/Footer';
 import { breakpoints } from './theme';
-import logo from './assets/logo.png';
+
 import logo_bianco from './assets/logo_bianco.png';
 function App() {
   const [isAtTop, setIsAtTop] = useState(false);

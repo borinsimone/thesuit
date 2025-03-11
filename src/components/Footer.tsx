@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import React from 'react';
+
 import styled from 'styled-components';
 import { breakpoints, FadeIn, FromLeft } from '../theme';
 import logo_bianco from '../assets/logo_bianco.png';
