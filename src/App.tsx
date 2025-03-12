@@ -66,7 +66,31 @@ function App() {
   };
   return (
     <Container>
-      {!isLoaded && <SplashPage>carico</SplashPage>}
+      {!isLoaded && (
+        <SplashPage>
+          <motion.div
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className='logo'
+            style={
+              {
+                // bottom: `15vh`,
+              }
+            }
+          >
+            <div className='logoImg'>
+              <img
+                src={logo_bianco}
+                alt='logo'
+              />
+            </div>
+            <span>the</span>
+            <br />
+            suit
+          </motion.div>
+        </SplashPage>
+      )}
       {isLoaded && (
         <>
           <motion.div

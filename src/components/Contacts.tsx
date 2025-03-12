@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import React, { useRef, useState } from 'react';
-import { IoMailOutline } from 'react-icons/io5';
+import { IoCallOutline, IoMailOutline } from 'react-icons/io5';
 import styled from 'styled-components';
 import { breakpoints } from '../theme';
 import emailjs from '@emailjs/browser';
@@ -122,7 +122,7 @@ function Contacts() {
           iniziare!
         </motion.p>
         <div className='cardContainer'>
-          {/* <motion.div
+          {/* <motion.a
             initial='hidden'
             whileInView='visible'
             // viewport={{ once: true }}
@@ -132,13 +132,14 @@ function Contacts() {
               hidden: { scale: 0, opacity: 0 },
             }}
             className='infocard'
+            href='tel:'
           >
-            <IoCallOutline size='50px' />
+            <IoCallOutline size='70px' />
             <div className='text'>
               <div className='name'>numero di telefono</div>
               <div className='value'>+39 32974823749</div>
             </div>
-          </motion.div> */}
+          </motion.a> */}
           <motion.div
             className='infocard'
             initial='hidden'
@@ -286,8 +287,9 @@ const Container = styled.div`
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: end;
         gap: 10px;
+
         .text {
           display: flex;
           flex-direction: column;
