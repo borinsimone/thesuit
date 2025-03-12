@@ -140,8 +140,8 @@ const Container = styled.div`
     }
   }
   @media (min-width: ${breakpoints.laptop}) {
-    height: 100vh;
-    height: 100dvh;
+    /* height: 100vh;
+    height: 100dvh; */
     justify-content: space-evenly;
   }
 `;

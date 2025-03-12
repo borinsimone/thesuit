@@ -42,87 +42,88 @@ function Contacts() {
   return (
     <Container id='contacts'>
       <h1>CONTATTI</h1>
-      <motion.form
-        ref={formRef}
-        initial='hidden'
-        whileInView='visible'
-        // viewport={{ once: true }}
-        transition={{ duration: 0.3 }}
-        variants={{
-          visible: { scale: 1, opacity: 1 },
-          hidden: { scale: 0, opacity: 0 },
-        }}
-        action=''
-        onSubmit={sendEmail}
-      >
-        <div className='formTitle'>
-          <p className='main'>Contattaci</p>
-          <p className='sub'>Hai un’idea? Costruiamola insieme</p>
-        </div>
-        <div className='formGroup'>
-          <label htmlFor='name'>Nome</label>
-          <input
-            type='text'
-            id='name'
-            name='name'
-            placeholder='Il tuo nome'
-            required
-          />
-        </div>
-        <div className='formGroup'>
-          <label htmlFor='email'>Email</label>
-          <input
-            type='email'
-            id='email'
-            name='email'
-            placeholder='email@example.com'
-            required
-          />
-        </div>
-        <div className='formGroup'>
-          <label htmlFor='message'>Messaggio</label>
-          <textarea
-            id='message'
-            name='message'
-            placeholder='Di cosa hai bisogno?'
-            required
-          />
-        </div>
-        <div className='disclaimer'>
-          <input
-            type='checkbox'
-            checked={isChecked}
-            onChange={() => {
-              setIsChecked(!isChecked);
-            }}
-          />
-          <p>Accetto il trattamento dei dati personali</p>
-        </div>
-        {error && <p style={{ color: 'red' }}>{error}</p>}
-        <button
-          type='submit'
-          disabled={isSent}
-        >
-          {isSent ? 'Messaggio inviato!' : 'Invia'}
-        </button>{' '}
-      </motion.form>
-      <div className='info'>
-        <motion.p
+      <div className='container'>
+        <motion.form
+          ref={formRef}
           initial='hidden'
           whileInView='visible'
           // viewport={{ once: true }}
-          transition={{ duration: 0.3, delay: 0.4 }}
+          transition={{ duration: 0.3 }}
           variants={{
-            visible: { y: 0, opacity: 1 },
-            hidden: { y: '50px', opacity: 0 },
+            visible: { scale: 1, opacity: 1 },
+            hidden: { scale: 0, opacity: 0 },
           }}
+          action=''
+          onSubmit={sendEmail}
         >
-          Siamo pronti ad ascoltare le tue esigenze e trasformarle in soluzioni
-          digitali su misura. Compila il form o contattaci direttamente per
-          iniziare!
-        </motion.p>
-        <div className='cardContainer'>
-          {/* <motion.a
+          <div className='formTitle'>
+            <p className='main'>Contattaci</p>
+            <p className='sub'>Hai un’idea? Costruiamola insieme</p>
+          </div>
+          <div className='formGroup'>
+            <label htmlFor='name'>Nome</label>
+            <input
+              type='text'
+              id='name'
+              name='name'
+              placeholder='Il tuo nome'
+              required
+            />
+          </div>
+          <div className='formGroup'>
+            <label htmlFor='email'>Email</label>
+            <input
+              type='email'
+              id='email'
+              name='email'
+              placeholder='email@example.com'
+              required
+            />
+          </div>
+          <div className='formGroup'>
+            <label htmlFor='message'>Messaggio</label>
+            <textarea
+              id='message'
+              name='message'
+              placeholder='Di cosa hai bisogno?'
+              required
+            />
+          </div>
+          <div className='disclaimer'>
+            <input
+              type='checkbox'
+              checked={isChecked}
+              onChange={() => {
+                setIsChecked(!isChecked);
+              }}
+            />
+            <p>Accetto il trattamento dei dati personali</p>
+          </div>
+          {error && <p style={{ color: 'red' }}>{error}</p>}
+          <button
+            type='submit'
+            disabled={isSent}
+          >
+            {isSent ? 'Messaggio inviato!' : 'Invia'}
+          </button>{' '}
+        </motion.form>
+        <div className='info'>
+          <motion.p
+            initial='hidden'
+            whileInView='visible'
+            // viewport={{ once: true }}
+            transition={{ duration: 0.3, delay: 0.4 }}
+            variants={{
+              visible: { y: 0, opacity: 1 },
+              hidden: { y: '50px', opacity: 0 },
+            }}
+          >
+            Siamo pronti ad ascoltare le tue esigenze e trasformarle in
+            soluzioni digitali su misura. Compila il form o contattaci
+            direttamente per iniziare!
+          </motion.p>
+          <div className='cardContainer'>
+            {/* <motion.a
             initial='hidden'
             whileInView='visible'
             // viewport={{ once: true }}
@@ -140,38 +141,39 @@ function Contacts() {
               <div className='value'>+39 32974823749</div>
             </div>
           </motion.a> */}
-          <motion.div
-            className='infocard'
+            <motion.div
+              className='infocard'
+              initial='hidden'
+              whileInView='visible'
+              // viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              variants={{
+                visible: { scale: 1, opacity: 1 },
+                hidden: { scale: 0, opacity: 0 },
+              }}
+            >
+              <IoMailOutline size='80px' />
+              <div className='text'>
+                <div className='name'>indirizzo email</div>
+                <div className='value'>sint.italiasnc@gmail.com</div>
+              </div>
+            </motion.div>
+          </div>
+
+          <motion.p
             initial='hidden'
             whileInView='visible'
             // viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.3, delay: 0.6 }}
             variants={{
-              visible: { scale: 1, opacity: 1 },
-              hidden: { scale: 0, opacity: 0 },
+              visible: { y: 0, opacity: 1 },
+              hidden: { y: '50px', opacity: 0 },
             }}
           >
-            <IoMailOutline size='80px' />
-            <div className='text'>
-              <div className='name'>indirizzo email</div>
-              <div className='value'>sint.italiasnc@gmail.com</div>
-            </div>
-          </motion.div>
+            Parlaci della tua idea senza impegno! Ti guideremo verso la
+            soluzione più adatta per far crescere il tuo business.
+          </motion.p>
         </div>
-
-        <motion.p
-          initial='hidden'
-          whileInView='visible'
-          // viewport={{ once: true }}
-          transition={{ duration: 0.3, delay: 0.6 }}
-          variants={{
-            visible: { y: 0, opacity: 1 },
-            hidden: { y: '50px', opacity: 0 },
-          }}
-        >
-          Parlaci della tua idea senza impegno! Ti guideremo verso la soluzione
-          più adatta per far crescere il tuo business.
-        </motion.p>
       </div>
     </Container>
   );
@@ -181,6 +183,7 @@ export default Contacts;
 const Container = styled.div`
   width: 100%;
   display: flex;
+
   flex-direction: column;
   align-items: center;
   gap: 40px;
@@ -191,6 +194,10 @@ const Container = styled.div`
   padding-top: 15vh;
   padding-top: 15dvh;
   /* scroll-snap-align: start; */
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
   form {
     /* scroll-snap-align: end; */
     scroll-margin-bottom: 20px;
@@ -309,15 +316,17 @@ const Container = styled.div`
     }
   }
   @media (min-width: ${breakpoints.laptop}) {
-    height: 100vh;
-    height: 100dvh;
-    flex-direction: row;
+    /* height: 100vh;
+    height: 100dvh; */
+    min-height: 100vh;
+
     justify-content: center;
     /* scroll-snap-align: start; */
     position: relative;
     h1 {
-      position: absolute;
-      top: 15vh;
+    }
+    .container {
+      flex-direction: row;
     }
     form,
     .info {
